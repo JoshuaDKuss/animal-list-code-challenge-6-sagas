@@ -20,7 +20,7 @@ CREATE TABLE "species" (
 );
 
 INSERT INTO "class" ("name") 
-VALUES ('Mammal'), ('Bird'), ('Fish'), ('Reptile'), ('Amphibian')
+VALUES ('Mammal'), ('Bird'), ('Fish'), ('Reptile'), ('Amphibian');
 
 INSERT INTO "species" ("name", "class_id") 
 VALUES ('Blue Spiny Lizard', 4), ('Murray River Turtle', 4), 
@@ -33,7 +33,7 @@ VALUES ('Blue Spiny Lizard', 4), ('Murray River Turtle', 4),
 ('Guinea Pig', 1), ('Red Kangaroo', 1), 
 ('Tammar Wallaby', 1), ('Koala', 1), 
 ('Dwarf Zebu', 1), ('Red Panda', 1),
-('Moutain Goat', 1)
+('Moutain Goat', 1);
 ```
 
 1. `npm install`
