@@ -4,77 +4,69 @@ For this weekend challenge, you'll be building a portfolio site to showcase your
 
 ## Setup
 
-1. Create a database table named `portfolio`
-1. Run the following SQL using the `portfolio` database:
+1. Create a database table named `zoo_animals`
+1. Run the following SQL using the `zoo_animals` database:
 
 ```SQL
-CREATE TABLE "tags" (
+CREATE TABLE "class" (
     "id" SERIAL PRIMARY KEY,
     "name" varchar(255) NOT NULL
 );
 
-CREATE TABLE "projects" (
+CREATE TABLE "species" (
     "id" SERIAL PRIMARY KEY,
     "name" varchar(255) NOT NULL,
-    "description" varchar(2048),
-    "thumbnail" varchar(2048), 
-    "website" varchar(2048),
-    "github" varchar(2048),
-    "date_completed" date,
-    "tag_id" INT REFERENCES "tags"
+    "class_id" INT REFERENCES "class"
 );
 
-INSERT INTO "tags" ("name") 
-VALUES ('React'), ('jQuery'), ('Node'), ('SQL'), ('Redux'), ('HTML')
+INSERT INTO "class" ("name") 
+VALUES ('Mammal'), ('Bird'), ('Fish'), ('Reptile'), ('Amphibian')
+
+INSERT INTO "species" ("name", "class_id") 
+VALUES ('Blue Spiny Lizard', 4), ('Murray River Turtle', 4), 
+('Tomato Frog', 5), ('Wyoming Toad', 5), 
+('Tiger Salamander', 5), ('Freshwater Catfish', 3), 
+('Sarus Crane', 2), ('Great Horned Owl', 2), 
+('Magpie Robin', 2), ('Toco Toucan', 2), 
+('Northern Pintail Duck', 2), ('Blue-winged Teal', 2), 
+('Toco Toucan', 2),('Dwarf Mongoose', 1), 
+('Guinea Pig', 1), ('Red Kangaroo', 1), 
+('Tammar Wallaby', 1), ('Koala', 1), 
+('Dwarf Zebu', 1), ('Red Panda', 1),
+('Moutain Goat', 1)
 ```
 
 1. `npm install`
 1. `npm run server`
 1. `npm run client`
 
-## Feature List
+## Description
 
-> NOTE: Start by taking inventory of the existing code. Part of the work for setting up sagas has been done for you.
+You have been provided with data for a small Zoo. Your web app should display all of the animal classes along with the total number of species in each class. 
 
-For base mode, you should only include **one** tag per project. This gives you a one to many relationship. We'll cover many to many SQL queries next week. Do not implement image upload for base mode. You can include thumbnail images in the `public/images` folder. Take a screenshot of your project by using `Command-Shift-4` on your mac. It turns the cursor into a crosshair, which you can drag to select a portion of your screen to capture. The image will appear on your desktop.
+> NOTE: You should only need to modify **two** files for this checkpoint.
 
-### Project Page
+- [ ] Write your SQL in the `routes/animal.router.js` file
+- [ ] Add a Saga in the `index.js` file for making your `GET` request
 
-- [ ] Client side route that display projects that are stored in the database
-- [ ] Each project should conditionally render a name, description, thumbnail, website, date complete and a tag. Many of the fields are optional, only show properties that aren't null.
-- [ ] Include a link to GitHub that opens in a new window
-- [ ] Add your name at the top of the page
-- [ ] Use Sagas for API requests to your server
+## Output
 
-### Admin Page
+When the Saga and router are working as expected, the page should display the following:
 
-- [ ] Client side route that displays a form allowing you to add a new project to your portfolio
-- [ ] Include a drop down menu with a list of tags
-- [ ] Send data to the server and notify the user of success or failure
-- [ ] List projects by name and allow the user to delete them
-- [ ] Include a button that navigates to the project page
+| Class | Number of Species |
+|---|---|
+| Mammal | 8 |
+| Bird | 7 |
+| Fish | 1 |
+| Reptile | 3 |
+| Amphibian | 3 |
 
-### General Tasks
+<img src="" width="560">
 
-- [ ] Commit your code frequently! You should have at 15+ commits on a project of this size.
-- [ ] Comment your code.
-- [ ] Update this README to include a description of the project in your own words.
 
-## Wireframes
+## Stretch Goal
 
-> NOTE: Feel free to modify the styling and layout of content on the page. 
+> NOTE: Please commit your code before moving on to the stretch goals.
 
-### Project Page
-
-<img src="https://github.com/PrimeAcademy/weekend-6-portfolio/raw/master/wireframes/project_page.png" width="560">
-
-### Admin Page
-
-<img src="https://github.com/PrimeAcademy/weekend-6-portfolio/raw/master/wireframes/admin_page.png" width="560">
-
-## Stretch Goals
-
-- [ ] Use the GitHub API to get user information to display at the top of the page
-- [ ] Improve styling on the page using Material UI
-- [ ] Include a form on the admin page for adding new tags
-- [ ] Implement additional features of the GitHub API
+- [ ] Allow the Zookeeper to add new species
+- [ ] Sort the classes from greatest to least number of species
