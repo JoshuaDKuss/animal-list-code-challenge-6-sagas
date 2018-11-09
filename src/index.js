@@ -12,26 +12,17 @@ import createSagaMiddleware from 'redux-saga';
 
 // Create the rootSaga generator function
 function* rootSaga() {
+    // YOUR CODE HERE
 
 }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
-// Used to store projects returned from the server
-const projects = (state = [], action) => {
+// Used to store class and number of unique animals in that class
+const zooAnimals = (state = [], action) => {
     switch (action.type) {
-        case 'SET_PROJECTS':
-            return action.payload;
-        default:
-            return state;
-    }
-}
-
-// Used to store the project tags (e.g. 'React', 'jQuery', 'Angular', 'Node.js')
-const tags = (state = [], action) => {
-    switch (action.type) {
-        case 'SET_TAGS':
+        case 'SET_ZOO_ANIMALS':
             return action.payload;
         default:
             return state;
@@ -41,8 +32,7 @@ const tags = (state = [], action) => {
 // Create one store that all components can use
 const storeInstance = createStore(
     combineReducers({
-        projects,
-        tags,
+        zooAnimals,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),

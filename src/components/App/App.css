@@ -2,7 +2,6 @@
   text-align: center;
 }
 
-
 .App-header {
   background-color: #222;
   height: 150px;
@@ -18,7 +17,29 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+header {
+  padding: 20px;
+  margin: 0;
+  min-height: 80px;
+  color: white;
+  background-color: darkgreen;
 }
+
+table {
+    border-collapse: collapse;
+    min-width: 600px;
+    margin: 0 auto;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    color: black;
+}
+
