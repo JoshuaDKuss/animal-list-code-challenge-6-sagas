@@ -43,14 +43,14 @@ You have been provided with data for a small Zoo. Your web app should display al
 
 ## Task List
 
-- [ ] Write your SQL in the `routes/zoo.router.js` file
-- [ ] Add a Saga in the `index.js` file for making your `GET` request
+- [ ] Write your SQL in the `routes/zoo.router.js` file.
+- [ ] Add a Saga in the `index.js` file for making your `GET` request. It should listen for the action type of `GET_ZOO_ANIMALS`.
 
 ## Sample Output
 
 When the Saga and router are working as expected, the page should display the following:
 
-| Class | Number of Species |
+| Species | Class |
 |---|---|
 | Blue Spiny Lizard | Reptile |
 | Murray River Turtle | Reptile |
