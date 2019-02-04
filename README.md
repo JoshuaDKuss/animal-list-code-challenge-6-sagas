@@ -74,4 +74,4 @@ When the Saga and router are working as expected, the page should display the fo
 
 - [ ] Create a form that allows the Zookeeper to add a new animal
 - [ ] Add ability to transfer an animal to a different zoo (remove them from the database)
-- [ ] Create a form that allows the Zookeeper to add new class
+- [ ] Create a form that allows the Zookeeper to add a new class
