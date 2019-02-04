@@ -6,7 +6,7 @@ You have been provided with data for a small Zoo. Your web app should display al
 
 ## Setup
 
-1. Create a database table named `zoo_animals`
+1. Create a database named `zoo_animals`
 1. Run the following SQL using the `zoo_animals` database:
 
     ```SQL
